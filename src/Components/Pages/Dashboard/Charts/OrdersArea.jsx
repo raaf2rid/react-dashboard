@@ -1,11 +1,8 @@
 import {
   format,
-  formatDistance,
-  formatRelative,
   subDays,
-  compareAsc,
 } from "date-fns/esm";
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   AreaChart,
   Area,
@@ -40,7 +37,7 @@ export default function OrdersArea() {
   }
 
   function customToolTip(props) {
-    const { active, payload, label } = props;
+    const { active, payload } = props;
     console.log(props);
     if (active) {
       return (

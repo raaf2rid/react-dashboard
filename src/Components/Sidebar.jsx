@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import dashboard from "../assets/dashboard.svg";
 import orders from "../assets/orders.svg";
@@ -31,7 +31,7 @@ function Sidebar() {
           {({ isActive }) => (
             <span>
               <img
-                src={dashboard}
+                src={dashboard} alt=""
                 className={isActive ? "invert" : undefined}
               />
               Dashboard
@@ -48,7 +48,7 @@ function Sidebar() {
         >
           {({ isActive }) => (
             <span>
-              <img src={orders} className={isActive ? "invert" : undefined} />
+              <img src={orders} alt="" className={isActive ? "invert" : undefined} />
               Orders
             </span>
           )}
@@ -63,7 +63,7 @@ function Sidebar() {
         >
           {({ isActive }) => (
             <span>
-              <img src={company} className={isActive ? "invert" : undefined} />
+              <img src={company} alt="" className={isActive ? "invert" : undefined} />
               Company
             </span>
           )}
@@ -78,7 +78,7 @@ function Sidebar() {
         >
           {({ isActive }) => (
             <span>
-              <img src={drivers} className={isActive ? "invert" : undefined} />
+              <img src={drivers} alt="" className={isActive ? "invert" : undefined} />
               Drivers
             </span>
           )}
@@ -93,7 +93,7 @@ function Sidebar() {
         >
           {({ isActive }) => (
             <span>
-              <img src={devices} className={isActive ? "invert" : undefined} />
+              <img src={devices} alt="" className={isActive ? "invert" : undefined} />
               Devices
             </span>
           )}
@@ -108,7 +108,7 @@ function Sidebar() {
         >
           {({ isActive }) => (
             <span>
-              <img src={accounts} className={isActive ? "invert" : undefined} />
+              <img src={accounts} alt ="" className={isActive ? "invert" : undefined} />
               Accounts/Transaction
             </span>
           )}
@@ -123,7 +123,7 @@ function Sidebar() {
         >
           {({ isActive }) => (
             <span>
-              <img src={settings} className={isActive ? "invert" : undefined} />
+              <img src={settings} alt="" className={isActive ? "invert" : undefined} />
               Settings
             </span>
           )}

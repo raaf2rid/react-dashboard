@@ -8,7 +8,6 @@ export default function Login({ handleClick }) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);

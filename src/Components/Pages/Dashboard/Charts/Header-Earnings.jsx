@@ -1,6 +1,3 @@
-import React from "react";
-import Select from "react-select";
-
 const options = [
   { value: "monthly", label: "Monthly" },
   { value: "weekly", label: "Weekly" },

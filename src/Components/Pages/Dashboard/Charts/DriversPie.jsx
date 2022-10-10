@@ -2,9 +2,7 @@ import React from "react";
 import {
   PieChart,
   Pie,
-  Sector,
   Cell,
-  ResponsiveContainer,
   Label,
 } from "recharts";
 import "../../../../styles/main_app/dashboard/charts/drivers.css";
