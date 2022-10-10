@@ -6,3 +6,9 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+.main-app {
+  background-color: #f9f9f9;
+  padding: 1.8em;
+  height: 1180px;
+}

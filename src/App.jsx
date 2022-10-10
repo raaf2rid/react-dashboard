@@ -1,16 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import "./styles/index.css";
+import {LoginContext} from "./loginContext"
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    JSON.parse(localStorage.getItem("loginData")) || false
-  );
 
-  function handleClick() {
-    setIsLoggedIn(true);
-  }
+  const {isLoggedIn, handleClick} = useContext(LoginContext)
 
   useEffect(() => {
     localStorage.setItem("loginData", JSON.stringify(isLoggedIn));

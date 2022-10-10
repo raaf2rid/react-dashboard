@@ -1,15 +1,29 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   padding: 1.5em;
   width: 350px;
+  justify-content: space-between;
 }
 
 .option-div {
   margin-top: 2em;
   display: flex;
   flex-direction: column;
+}
+
+.logout{
+  display: flex;
+  padding-left: 1.2em;
+  gap: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  width: max-content;
+  color: #4d4d4d;
+}
+
+.logout-link{
+  text-decoration: none;
 }
 
 .sidebar-option {

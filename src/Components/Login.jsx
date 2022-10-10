@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import "../styles/login.css";
+import {LoginContext} from "../loginContext"
 
-export default function Login({ handleClick }) {
+export default function Login() {
+
+  const {handleClick} = useContext(LoginContext)
+
   const {
     register,
     handleSubmit,
@@ -52,7 +56,7 @@ export default function Login({ handleClick }) {
           <label htmlFor="isChecked">Keep me signed in</label>
         </span>
 
-        <Link to="/home">
+        <Link to="/">
           <input type="submit" onClick={handleClick} value="Login" />
         </Link>
       </form>

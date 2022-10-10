@@ -21,7 +21,7 @@ const Home = () => {
         <Sidebar />
         <div className="main-app">
           <Routes>
-            <Route path="/home" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/home/orders" element={<Orders />} />
             <Route path="/home/company" element={<Company />} />
             <Route path="/home/drivers" element={<Drivers />} />

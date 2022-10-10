@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, {useContext} from "react";
+import { Link,NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import dashboard from "../assets/dashboard.svg";
 import orders from "../assets/orders.svg";
@@ -8,21 +8,27 @@ import drivers from "../assets/drivers.svg";
 import devices from "../assets/devices.svg";
 import accounts from "../assets/accounts.svg";
 import settings from "../assets/settings.svg";
+import logout from "../assets/logout.svg"
 import "../styles/sidebar.css";
+import {LoginContext} from "../loginContext"
 
 function Sidebar() {
+
+  const {handleClick} = useContext(LoginContext)
+
   let activeClassName = "sidebar-option sidebar-option-active";
   let inActiveClassName = "sidebar-option";
 
   return (
     <div className="sidebar">
+      <div>
       <div className="sidebar-logo-div">
         <img className="sidebar-logo" src={logo} alt="" />
       </div>
 
       <div className="option-div">
         <NavLink
-          to="/home/"
+          to="/"
           className={({ isActive }) =>
             isActive ? activeClassName : inActiveClassName
           }
@@ -129,6 +135,14 @@ function Sidebar() {
           )}
         </NavLink>
       </div>
+      
+      </div>
+      <Link to="/" className="logout-link">
+      <span onClick={handleClick} className="logout">
+        <img src={logout} alt="" />
+        Logout
+      </span>
+      </Link>
     </div>
   );
 }
