@@ -38,7 +38,6 @@ export default function OrdersArea() {
 
   function customToolTip(props) {
     const { active, payload } = props;
-    console.log(props);
     if (active) {
       return (
         <div className="custom-tooltip-orders">
