@@ -110,7 +110,7 @@ export default function EarningsBar() {
             width={10}
           />
           <CartesianGrid horizontalPoints={[265]} vertical={false} />
-          <Tooltip formatter={formatYAxis} content={customToolTip} />
+          <Tooltip formatter={formatYAxis} content={customToolTip} wrapperStyle={{ outline: "none" }} />
           <Bar
             dataKey="Earning"
             fill="#00AA00"

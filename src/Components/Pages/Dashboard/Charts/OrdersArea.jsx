@@ -98,7 +98,7 @@ export default function OrdersArea() {
             fontSize="0.8rem"
           />
           <YAxis tickCount={6} stroke="" domain={[0, 250]} fontSize="0.8rem" />
-          <Tooltip content={customToolTip} cursor={<CustomCursor />} />
+          <Tooltip content={customToolTip} cursor={<CustomCursor />} wrapperStyle={{ outline: "none" }} />
           <Area
             type="monotone"
             dataKey="orders"
