@@ -13,7 +13,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(isLoggedIn);
     localStorage.setItem("loginData", JSON.stringify(isLoggedIn));
   }, [isLoggedIn]);
 
