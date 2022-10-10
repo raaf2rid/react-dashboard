@@ -1,0 +1,54 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1.5em;
+  width: 350px;
+}
+
+.option-div {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-option {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1.2em;
+  color: #4d4d4d;
+}
+
+.sidebar-option:focus .invert {
+  filter: invert(100%) contrast(200%) brightness(150%);
+}
+
+.sidebar-option span {
+  gap: 1em;
+}
+
+.sidebar-option:active {
+  background-color: #191c52;
+  color: #ffffff;
+  transition: 0.5s;
+}
+.sidebar-option-active {
+  background-color: #191c52;
+  color: #ffffff;
+}
+
+.sidebar-logo-div {
+  display: flex;
+
+  justify-content: center;
+}
+
+.sidebar-logo {
+  width: 80%;
+}
+
+.sidebar-option:active .invert,
+.invert {
+  filter: invert(100%) contrast(200%) brightness(150%);
+}

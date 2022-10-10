@@ -1,0 +1,54 @@
+.small-box-container {
+  margin-top: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+.small-box {
+  padding: 1em;
+  border-radius: 8px;
+  display: flex;
+  gap: 25px;
+  background-color: #ffffff;
+}
+
+.img-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+.text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-div :nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.text-div :nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.active-sign,
+.completed-sign {
+  position: relative;
+}
+
+.active-sign:after {
+  position: absolute;
+  content: url(../../../assets/active-sign.svg);
+  transform: translate(15px, 10px);
+}
+
+.completed-sign:after {
+  position: absolute;
+  content: url(../../../assets/completed-sign.svg);
+  transform: translate(15px, 10px);
+}

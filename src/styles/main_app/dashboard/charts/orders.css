@@ -1,0 +1,29 @@
+.order-chart {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.custom-tooltip-orders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transform: translateX(-50px);
+}
+
+.custom-tooltip-orders .orders {
+  font-weight: 600;
+}
+
+.order-chart .header {
+  align-items: center;
+  margin-bottom: 1em;
+  margin-right: 10px;
+  margin-left: 1.3em;
+}

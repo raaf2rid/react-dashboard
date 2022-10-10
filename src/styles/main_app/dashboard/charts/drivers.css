@@ -1,0 +1,51 @@
+.pie-chart {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.pie-div {
+  display: flex;
+  align-items: center;
+}
+
+.label-top {
+  transform: translateY(-5px);
+  font-size: 1.5em;
+}
+
+.label {
+  transform: translateY(5px);
+  font-size: 0.9em;
+}
+
+.pie-chart .footer {
+  display: flex;
+  transform: translateY(-14px);
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.pie-chart .footer p {
+  font-weight: 600;
+}
+
+.pie-chart .footer p::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: translate(-14px, 2.5px);
+  border-radius: 50%;
+}
+
+.pie-chart .footer p:nth-child(1):before {
+  background-color: #0055d7;
+}
+.pie-chart .footer p:nth-child(2):before {
+  background-color: #ffb822;
+}
+.pie-chart .footer p:nth-child(3):before {
+  background-color: #ff7222;
+}
