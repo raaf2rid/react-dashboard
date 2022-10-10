@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.logout{
+.logout {
   display: flex;
   padding-left: 1.2em;
   gap: 1em;
@@ -22,7 +22,7 @@
   color: #4d4d4d;
 }
 
-.logout-link{
+.logout-link {
   text-decoration: none;
 }
 

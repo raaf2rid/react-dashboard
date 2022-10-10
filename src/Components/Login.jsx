@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import "../styles/login.css";
-import {LoginContext} from "../loginContext"
+import { LoginContext } from "../loginContext";
 
 export default function Login() {
-
-  const {handleClick} = useContext(LoginContext)
+  const { handleClick } = useContext(LoginContext);
 
   const {
     register,

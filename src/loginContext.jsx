@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 const LoginContext = React.createContext();
 
 function LoginContextProvider(props) {
@@ -14,13 +14,11 @@ function LoginContextProvider(props) {
     setIsLoggedIn((prev) => !prev);
   }
 
-  return(
-    <LoginContext.Provider value= {{isLoggedIn, handleClick}}>
+  return (
+    <LoginContext.Provider value={{ isLoggedIn, handleClick }}>
       {props.children}
     </LoginContext.Provider>
-  )
-
+  );
 }
 
-
-export {LoginContextProvider, LoginContext}
+export { LoginContextProvider, LoginContext };

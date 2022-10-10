@@ -2,11 +2,10 @@ import { useEffect, useContext } from "react";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
 import "./styles/index.css";
-import {LoginContext} from "./loginContext"
+import { LoginContext } from "./loginContext";
 
 function App() {
-
-  const {isLoggedIn, handleClick} = useContext(LoginContext)
+  const { isLoggedIn, handleClick } = useContext(LoginContext);
 
   useEffect(() => {
     localStorage.setItem("loginData", JSON.stringify(isLoggedIn));
