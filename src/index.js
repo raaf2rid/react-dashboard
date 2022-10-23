@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
-import { LoginContextProvider } from "./loginContext.jsx";
+import {UserContextProvider} from "../src/Contexts/UserContext"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <LoginContextProvider>
+      <UserContextProvider>
         <App />
-      </LoginContextProvider>
+      </UserContextProvider>
     </Router>
   </React.StrictMode>
 );

@@ -83,11 +83,18 @@ span {
 }
 
 [type="password"],
-[type="email"] {
+[type="email"],
+[type="text"] {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid gray;
   margin-top: -5px;
+}
+[type="password"]:focus,
+[type="email"]:focus,
+[type="text"]:focus {
+  border: 1px solid transparent;
+  outline: 2px solid #ff5701;
 }
 
 [type="submit"] {
@@ -99,6 +106,7 @@ span {
   cursor: pointer;
   transition: 0.2s;
   width: 100%;
+  margin-top: 1em;
 }
 
 [type="submit"]:hover {

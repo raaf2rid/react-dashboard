@@ -1,19 +1,26 @@
 import { useEffect, useContext } from "react";
 import Home from "./Components/Home";
-import Login from "./Components/Login";
+import Login from "./Components/Authentication/Login";
 import "./styles/index.css";
-import { LoginContext } from "./loginContext";
+import SignUp from "./Components/Authentication/SignUp";
+import { UserContext } from "../src/Contexts/UserContext";
+
 
 function App() {
-  const { isLoggedIn, handleClick } = useContext(LoginContext);
 
-  useEffect(() => {
-    localStorage.setItem("loginData", JSON.stringify(isLoggedIn));
-  }, [isLoggedIn]);
+  const { user } = useContext(UserContext)
 
-  return (
-    <div>{!isLoggedIn ? <Login handleClick={handleClick} /> : <Home />}</div>
-  );
+  console.log(user)
+
+  // return (
+  //   <div>{!isLoggedIn ? <Login handleClick={handleClick} /> : <Home />}</div>
+  // );
+
+    return (
+      <div>
+        {user ? <Login/> : <SignUp/>}
+      </div>
+    )
 }
 
 export default App;
