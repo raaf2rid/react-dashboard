@@ -1,14 +1,13 @@
-import React from "react";
-import UserImg from "../../assets/user-img.svg";
-import { getAuth } from "firebase/auth";
+import React, { useContext } from "react";
+import UserImg from "../../assets/user-img.svg"
+import { UserContext } from "../../Contexts/UserContext";
 
 
 
 
 export default function Header({title}) {
 
-  const auth = getAuth();
-
+  const {user} = useContext(UserContext)
 
   return (
     <div className="header">
@@ -17,7 +16,7 @@ export default function Header({title}) {
         <img src={UserImg} alt="" />
         <div>
           <p>Hello,</p>
-          <p>{auth.currentUser?.displayName && auth.currentUser.displayName}</p>
+          <p>{user?.displayName && user.displayName}</p>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
+import { getAuth } from "firebase/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { UserContext } from "../../Contexts/UserContext";
 import "../../styles/login.css";
@@ -8,8 +9,11 @@ import "../../styles/login.css";
 
 export default function Login() {
   
-  const {signIn} = useContext(UserContext)
+  const {logIn} = useContext(UserContext)
+  
   const [loginData, setLoginData] = useState({email: "", password: ""})
+
+  const auth = getAuth()
 
   const {
     register,
@@ -19,7 +23,7 @@ export default function Login() {
   
 
   const onSubmit = ({email, password}) => {
-    signIn(email, password)
+    logIn(email, password)
     .then(result=>{
       const user = result.user
       console.log("User", user)
@@ -47,6 +51,11 @@ export default function Login() {
     };
   });
 
+
+  if (auth.currentUser?.email === loginData.email){
+    return <Navigate to="/"/>
+  }
+
   return (
     <div className="form">
       <img className="logo" src={logo} alt="" />
@@ -69,7 +78,7 @@ export default function Login() {
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="Password"
+    
           name= "password"
           {...register("password" , { required: true, onChange: e => {handleChange(e)}})}
         />
@@ -89,9 +98,9 @@ export default function Login() {
         
     
 
-          {loginData.email && loginData.password ? <Link to="/">
+          
           <input type="submit" value="Login" />
-          </Link> : <input type="submit" value="Login" />}
+          
 
         
       </form>

@@ -10,6 +10,11 @@
   gap: 5px;
 }
 
+.user img {
+  width: 55px;
+  border-radius: 50%;
+}
+
 .user p {
   font-size: 1.1rem;
 }

@@ -18,8 +18,6 @@ import Settings from "../src/Components/Pages/Settings";
 
 function App() {
 
-  const { user } = useContext(UserContext)
-
 
   return (
     <>

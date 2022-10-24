@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "../styles/main_app/header.css";
 
 const Home = () => {

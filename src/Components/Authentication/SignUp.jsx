@@ -1,15 +1,20 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { UserContext } from "../../Contexts/UserContext";
 import "../../styles/login.css";
+import { getAuth } from "firebase/auth";
 
 
 export default function SignUp() {
 
+  const auth = getAuth();
 
-  const {createUser, addDisplayName} = useContext(UserContext)
+  const {createUser, addDisplayName, logOut} = useContext(UserContext)
+
+  const [signUpData, setSignUpData] = useState({firstName:"", lastName: "", email: "", password: ""})
+
 
   const {
     register,
@@ -30,13 +35,30 @@ export default function SignUp() {
   }
 
 
+  function handleChange(e){
+    setSignUpData(prevFormData => {
+      return {
+          ...prevFormData,
+          [e.target.name]: e.target.value
+      }
+  })
+  console.log(signUpData)
+  }
+
+
   useEffect(() => {
     document.body.classList.add("login-page");
 
     return () => {
       document.body.classList.remove("login-page");
     };
-  });
+  },[]);
+
+  if(auth.currentUser)
+  {
+  logOut()
+  return <Navigate to="/login"/>
+  }
 
   return (
     <div className="form">
@@ -51,24 +73,28 @@ export default function SignUp() {
         <label htmlFor="firstName">First Name</label>
         <input
           type="text"
-          {...register("firstName", { required: true})}
+          name="firstName"
+          {...register("firstName", { required: true, onChange: e => {handleChange(e)}})}
             />
         <label htmlFor="lastName">Last Name</label>
         <input
           type="text"
-          {...register("lastName",{ required: true})}
+          name="lastName"
+          {...register("lastName",{ required: true, onChange: e => {handleChange(e)}})}
         />
         <label htmlFor="email">Email</label>
         <input
           type="email"
-          {...register("email",{ required: true})}
+          name="email"
+          {...register("email",{ required: true, onChange: e => {handleChange(e)}})}
         />
 
         {/* include validation with required or other standard HTML validation rules */}
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          {...register("password",{ required: true})}
+          name="password"
+          {...register("password",{ required: true, onChange: e => {handleChange(e)}})}
         />
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
@@ -79,8 +105,8 @@ export default function SignUp() {
           </h5>
         </span>
 
-        
-          <input type="submit" value="Sign Up" />
+
+         <input type="submit" value="Sign Up" />
         
       </form>
     </div>

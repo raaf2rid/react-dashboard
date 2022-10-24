@@ -10,11 +10,14 @@ import accounts from "../assets/accounts.svg";
 import settings from "../assets/settings.svg";
 import logout from "../assets/logout.svg";
 import "../styles/sidebar.css";
+import { UserContext } from "../Contexts/UserContext";
 
 function Sidebar() {
 
   let activeClassName = "sidebar-option sidebar-option-active";
   let inActiveClassName = "sidebar-option";
+
+  const {logOut} = useContext(UserContext)
 
   return (
     <div className="sidebar">
@@ -158,8 +161,8 @@ function Sidebar() {
           </NavLink>
         </div>
       </div>
-      <Link to="/" className="logout-link">
-        <span className="logout">
+      <Link to="/login" className="logout-link">
+        <span className="logout" onClick={logOut}>
           <img src={logout} alt="" />
           Logout
         </span>
