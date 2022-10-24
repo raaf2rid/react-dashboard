@@ -10,10 +10,8 @@ import accounts from "../assets/accounts.svg";
 import settings from "../assets/settings.svg";
 import logout from "../assets/logout.svg";
 import "../styles/sidebar.css";
-import { LoginContext } from "../loginContext";
 
 function Sidebar() {
-  const { handleClick } = useContext(LoginContext);
 
   let activeClassName = "sidebar-option sidebar-option-active";
   let inActiveClassName = "sidebar-option";
@@ -46,7 +44,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-            to="/home/orders"
+            to="/orders"
             className={({ isActive }) =>
               isActive ? activeClassName : inActiveClassName
             }
@@ -65,7 +63,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-            to="/home/company"
+            to="/company"
             className={({ isActive }) =>
               isActive ? activeClassName : inActiveClassName
             }
@@ -84,7 +82,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-            to="/home/drivers"
+            to="/drivers"
             className={({ isActive }) =>
               isActive ? activeClassName : inActiveClassName
             }
@@ -103,7 +101,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-            to="/home/devices"
+            to="/devices"
             className={({ isActive }) =>
               isActive ? activeClassName : inActiveClassName
             }
@@ -122,7 +120,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-            to="/home/accounts"
+            to="/accounts"
             className={({ isActive }) =>
               isActive ? activeClassName : inActiveClassName
             }
@@ -141,7 +139,7 @@ function Sidebar() {
           </NavLink>
 
           <NavLink
-            to="/home/settings"
+            to="/settings"
             className={({ isActive }) =>
               isActive ? activeClassName : inActiveClassName
             }
@@ -161,7 +159,7 @@ function Sidebar() {
         </div>
       </div>
       <Link to="/" className="logout-link">
-        <span onClick={handleClick} className="logout">
+        <span className="logout">
           <img src={logout} alt="" />
           Logout
         </span>

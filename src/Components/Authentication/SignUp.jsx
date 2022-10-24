@@ -75,7 +75,7 @@ export default function SignUp() {
 
         <span>
           <h5>
-            Already have an account? Log In
+            Already have an account? <Link to="/login" style={{textDecoration : "none", color: "#ff5701"}}>Log In</Link> 
           </h5>
         </span>
 

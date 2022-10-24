@@ -1,15 +1,23 @@
 import React from "react";
 import UserImg from "../../assets/user-img.svg";
+import { getAuth } from "firebase/auth";
 
-export default function Header(props) {
+
+
+
+export default function Header({title}) {
+
+  const auth = getAuth();
+
+
   return (
     <div className="header">
-      <h1>{props.title}</h1>
+      <h1>{title}</h1>
       <div className="user">
         <img src={UserImg} alt="" />
         <div>
           <p>Hello,</p>
-          <p>Al Pacino</p>
+          <p>{auth.currentUser?.displayName && auth.currentUser.displayName}</p>
         </div>
       </div>
     </div>

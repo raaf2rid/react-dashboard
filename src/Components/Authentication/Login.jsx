@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
@@ -9,6 +9,7 @@ import "../../styles/login.css";
 export default function Login() {
   
   const {signIn} = useContext(UserContext)
+  const [loginData, setLoginData] = useState({email: "", password: ""})
 
   const {
     register,
@@ -26,6 +27,16 @@ export default function Login() {
     .catch( error => {
       console.error(error)
     })
+  }
+
+  function handleChange(e){
+    setLoginData(prevFormData => {
+      return {
+          ...prevFormData,
+          [e.target.name]: e.target.value
+      }
+  })
+  console.log(loginData)
   }
 
   useEffect(() => {
@@ -50,7 +61,8 @@ export default function Login() {
         <label htmlFor="email">Email</label>
         <input
           type="email"
-          {...register("email")}
+          name= "email"
+          {...register("email" , { required: true, onChange: e => {handleChange(e)}})}
         />
 
         {/* include validation with required or other standard HTML validation rules */}
@@ -58,7 +70,8 @@ export default function Login() {
         <input
           type="password"
           placeholder="Password"
-          {...register("password")}
+          name= "password"
+          {...register("password" , { required: true, onChange: e => {handleChange(e)}})}
         />
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
@@ -67,8 +80,19 @@ export default function Login() {
           <input id="isChecked" type="checkbox" />
           <label htmlFor="isChecked">Keep me signed in</label>
         </span>
+
+        <span>
+          <h5>
+            Don't have an account? <Link to="/signup" style={{textDecoration : "none", color : "#ff5701"}}>Sign Up</Link> 
+          </h5>
+        </span>
         
+    
+
+          {loginData.email && loginData.password ? <Link to="/">
           <input type="submit" value="Login" />
+          </Link> : <input type="submit" value="Login" />}
+
         
       </form>
     </div>
